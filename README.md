@@ -36,10 +36,10 @@ kafka-topics.bat --create --topic ODD_AGE_TOPIC --bootstrap-server localhost:909
            kafka-console-consumer --bootstrap-server localhost:9092 --topic ODD_AGE_TOPIC --from-beginning
            
 ## Enhancements which can be achieved
-Adjust the error handling, logging, and testing as needed to fit project requirements.
-Add necessary properties file to connect to Kafka cluster and handle movement of data using required dependecies .
-Single Broker Setup: This guide describes a simple single-broker setup suitable for development and testing. For production, a multi-broker setup is used.
-Data Loss: This setup is primarily for development purposes. Data persistence and reliability settings should be configured according to production requirements.
+  1.Adjust the error handling, logging, and testing as needed to fit project requirements.
+  2.Add necessary properties file to connect to Kafka cluster and handle movement of data using required dependecies .
+  3.Single Broker Setup: This guide describes a simple single-broker setup suitable for development and testing. For production, a multi-broker setup is used.
+  4.Data Loss: This setup is primarily for development purposes. Data persistence and reliability settings should be configured according to production requirements.
 
 
 
