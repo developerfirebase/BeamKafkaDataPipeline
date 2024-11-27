@@ -2,9 +2,7 @@
 
 This is a simple light weight, highly adaptable and scalable  data processing application built with Apache Beam. It consumes messages from a inbound Kakfa topic (namely SOURCE_TOPIC) and calculates the age from the date of birth, and publishes the messages to two separate outbound Kakfa topics (namely EVEN_AGE_TOPIC and ODD_AGE_TOPIC)  based on whether the calculated age is even or odd.
 
-
 ## Technology Stack
-
 - Java 17
 - Spring Boot
 - Apache Kafka
@@ -23,13 +21,13 @@ kafka-topics.bat --create --topic EVEN_AGE_TOPIC --bootstrap-server localhost:90
 kafka-topics.bat --create --topic ODD_AGE_TOPIC --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1
 
 ## Setup Instructions for Running the application
-### Clone this repository.
-### Navigate to the project directory and build the project using Maven: Build  using the command : mvn clean install
-### Go to terminal and inside project directory start the docker by using docker compose up -d
-### **Start Kafka Server**: Ensure that Kafka is installed and running on `localhost:9092`and required topics are created.
-### Hit these API using postmann 
-#### - `http://localhost:8080/send` - Sends the initial messages on `SOURCE_TOPIC`.
-#### - `http://localhost:8080/consume` - Consumes and processes messages from `SOURCE_TOPIC`.
+  1. Clone this repository.
+  2. Navigate to the project directory and build the project using Maven: Build  using the command : mvn clean install
+  3. Go to terminal and inside project directory start the docker by using docker compose up -d
+  4. **Start Kafka Server**: Ensure that Kafka is installed and running on `localhost:9092`and required topics are created.
+ ###  5. Hit these API using postmann 
+      - `http://localhost:8080/send` - Sends the initial messages on `SOURCE_TOPIC`.
+      - `http://localhost:8080/consume` - Consumes and processes messages from `SOURCE_TOPIC`.
                                 
    
 ## To verify messages in EVEN_AGE_TOPIC, use the following command:
