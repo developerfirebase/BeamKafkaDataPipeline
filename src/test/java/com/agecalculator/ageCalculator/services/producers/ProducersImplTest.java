@@ -37,22 +37,22 @@ public class ProducersImplTest {
 
     @Test
     public void sendMessageForEvenTest() throws IOException {
-        List<Payload> payloads = List.of(Payload.builder().name("kafka").address("krpura").dob("1994-09-11").build());
+        List<Payload> payloads = List.of(Payload.builder().name("kafka").address("Bangalore").dob("1984-10-20").build());
         producers.sendMessage(payloads, Constants.SOURCE_TOPIC);
         given(topicWiseConsume.getEvenMessage()).willReturn(objectMapper.writeValueAsString(payloads));
-        List<Payload> pr = objectMapper.readValue(topicWiseConsume.getEvenMessage(), new TypeReference<List<Payload>>() {
+        List<Payload> payloadreader = objectMapper.readValue(topicWiseConsume.getEvenMessage(), new TypeReference<List<Payload>>() {
         });
-        assertEquals(payloads, pr);
+        assertEquals(payloads, payloadreader );
     }
 
     @Test
     public void sendMessageForOddTest() throws IOException {
-        List<Payload> payloads = List.of(Payload.builder().name("kafka").address("krpura").dob("1995-09-11").build());
+        List<Payload> payloads = List.of(Payload.builder().name("kafka").address("Delhi").dob("1995-09-01").build());
         producers.sendMessage(payloads, Constants.SOURCE_TOPIC);
         given(topicWiseConsume.getOddMessage()).willReturn(objectMapper.writeValueAsString(payloads));
-        List<Payload> pr = objectMapper.readValue(topicWiseConsume.getOddMessage(), new TypeReference<List<Payload>>() {
+        List<Payload> payloadreader  = objectMapper.readValue(topicWiseConsume.getOddMessage(), new TypeReference<List<Payload>>() {
         });
-        assertEquals(payloads, pr);
+        assertEquals(payloads, payloadreader );
     }
 
 }
